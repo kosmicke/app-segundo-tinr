@@ -1,0 +1,44 @@
+.topics-container{
+  padding-top:32px
+}
+.topic-card{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  background: #ffff;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover{
+    background-color: #cce5ff;
+  }
+}
+.topic-card__title{
+  h4{
+    margin: 0px;
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    color : #333;
+  }
+  p{
+    margin: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    color : #666;
+  }
+}
+.topic-card__avatar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 16px;
+  img{
+    height: 80px;
+  }
+}

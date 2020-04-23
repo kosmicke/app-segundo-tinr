@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhotosModule } from './photos/photos.module';
 import { LayoutModule } from './layout/layout.module';
+import { PostsModule } from './posts/posts.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { LayoutModule } from './layout/layout.module';
     AppRoutingModule,
     PhotosModule,
     ErrorModule,
-    LayoutModule
+    LayoutModule,
+    PostsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

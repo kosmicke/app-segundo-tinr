@@ -1,0 +1,11 @@
+<div class="container topics-container">
+  <div class="topic-card" *ngFor="let topic of topics">
+    <div class="topic-card__avatar">
+      <img [src]="topic.avatar" alt="">
+    </div>
+    <div class="topic-card__title">
+      <h4>{{topic.name}}</h4>
+      <p>{{topic.desc}}</p>
+    </div>
+  </div>
+</div>
