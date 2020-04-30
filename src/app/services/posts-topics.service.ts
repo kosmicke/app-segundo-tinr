@@ -13,9 +13,9 @@ export class PostsTopicsService {
     private httpClient : HttpClient
   ) { }
 
-  getList() : Observable<any>{
+  getList() : Promise<any>{
     let endpoint = `${this.apiUrl}/topics`
-    return this.httpClient.get(endpoint)
+    return this.httpClient.get(endpoint).toPromise()
   }
 
 
