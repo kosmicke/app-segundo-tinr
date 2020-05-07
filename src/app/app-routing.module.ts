@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InsideLayoutComponent } from './layout/inside-layout/inside-layout.component';
 import { PostsTopicsComponent } from './posts/posts-topics/posts-topics.component';
+import { PostsTopicDetailComponent } from './posts/posts-topic-detail/posts-topic-detail.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       {path: 'photos', component: PhotosListComponent},
       {path: 'photos-search', component: PhotoSearchComponent},
       {path: 'topics', component: PostsTopicsComponent},
+      {path : 'topics/:id', component : PostsTopicDetailComponent},
       {path: '', redirectTo: 'photos', pathMatch: 'full' },
       {path: '**', component: NotFoundComponent}
     ]

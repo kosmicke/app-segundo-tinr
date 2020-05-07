@@ -29,6 +29,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/theme/theme-all.sass",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []

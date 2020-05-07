@@ -18,5 +18,10 @@ export class PostsTopicsService {
     return this.httpClient.get(endpoint).toPromise()
   }
 
+  getById(topicId) : Promise<any>{
+    let endpoint = `${this.apiUrl}/topics/${topicId}`
+    return this.httpClient.get(endpoint).toPromise()
+  }
+
 
 }
