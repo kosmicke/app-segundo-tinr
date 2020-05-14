@@ -8,6 +8,7 @@ import { PhotosModule } from './photos/photos.module';
 import { LayoutModule } from './layout/layout.module';
 import { PostsModule } from './posts/posts.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorModule,
     LayoutModule,
     PostsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,60 @@
+<div class="container">
+  <form [formGroup]="exampleForm">
+    <label for="name_input">Nome</label><br>
+    <input type="text" formControlName="name_input" id="name_input" name="name_input"><br><br>
+
+    <label for="email_input">Email</label><br>
+    <input type="email" formControlName="email_input" id="name_input" name="email_input"><br><br>
+
+    <label for="age_input">Idade</label><br>
+    <input type="number" formControlName="age_input" id="name_input" name="age_input"><br><br>
+
+    <label>Gênero</label><br>
+    <input type="radio" formControlName="gender_input" id="male" name="gender_input" value="male">
+    <label for="male">Homem</label><br>
+    <input type="radio" formControlName="gender_input" id="female" name="gender_input" value="female">
+    <label for="female">Mulher</label><br>
+    <input type="radio" formControlName="gender_input" id="other" name="gender_input" value="other">
+    <label for="other">Outro</label><br><br>
+
+    <label>Idiomas</label><br>
+    <input type="checkbox" formControlName="pt_input" id="pt_input" name="pt_input" value="true">
+    <label for="pt_input">Eu falo português</label><br>
+    <input type="checkbox" formControlName="en_input" id="en_input" name="en_input" value="true">
+    <label for="en_input">Eu falo inglês</label><br><br>
+
+    <label for="terms_input">Aceita os termos?</label><br>
+    <select id="terms_input" formControlName="terms_input" name="terms_input">
+      <option>Selecione uma opição</option>
+      <option value="s">Sim</option>
+      <option value="n">Não</option>
+    </select><br><br>
+
+    <button type="button" (click)="myFunction()">Enviar</button>
+
+  </form>
+</div>
+
+<!-- Acrescente o trecho abaixo no final do código -->
+<div class="container mt-4" *ngIf="objectData">
+  <h4>Nome</h4>
+  <p>{{objectData.name_input}}</p>
+
+  <h4>Email</h4>
+  <p>{{objectData.email_input}}</p>
+
+  <h4>Idade</h4>
+  <p>{{objectData.age_input}}</p>
+
+  <h4>Gênero</h4>
+  <p>{{objectData.gender_input}}</p>
+
+  <h4>Fala portugês?</h4>
+  <p>{{objectData.pt_input ? "Sim" : "Não"}}</p>
+
+  <h4>Fala inglês?</h4>
+  <p>{{objectData.en_input ? "Sim" : "Não"}}</p>
+
+  <h4>Aceita os termos?</h4>
+  <p>{{objectData.terms_input}}</p>
+</div>
