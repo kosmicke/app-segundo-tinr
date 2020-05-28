@@ -8,6 +8,11 @@
       <li class="nav-item" *ngFor="let route of routes">
         <a class="nav-link" [routerLink]="route.link" routerLinkActive="active">{{route.label}}</a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Sair</a>
+      </li>
+
     </ul>
   </div>
 </nav>

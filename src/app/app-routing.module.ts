@@ -8,6 +8,7 @@ import { PostsTopicsComponent } from './posts/posts-topics/posts-topics.componen
 import { PostsTopicDetailComponent } from './posts/posts-topic-detail/posts-topic-detail.component';
 import { OutsideLayoutComponent } from './layout/outside-layout/outside-layout.component';
 import { AuthLoginComponent } from './auth/auth-login/auth-login.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
@@ -22,10 +23,27 @@ const routes: Routes = [
     path: "",
     component : InsideLayoutComponent,
     children : [
-      {path: 'photos', component: PhotosListComponent},
-      {path: 'photos-search', component: PhotoSearchComponent},
-      {path: 'topics', component: PostsTopicsComponent},
-      {path : 'topics/:id', component : PostsTopicDetailComponent},
+      {
+        path: 'photos',
+        component: PhotosListComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path: 'photos-search',
+        component: PhotoSearchComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path: 'topics',
+        component: PostsTopicsComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : 'topics/:id',
+        component : PostsTopicDetailComponent,
+        canActivate : [AuthGuard]
+      },
+
       {path: '', redirectTo: 'photos', pathMatch: 'full' },
       {path: '**', component: NotFoundComponent}
     ]

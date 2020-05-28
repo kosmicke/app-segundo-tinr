@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inside-header',
@@ -9,7 +11,10 @@ export class InsideHeaderComponent implements OnInit {
 
   public routes : any[];
 
-  constructor() {
+  constructor(
+    private authService : AuthService,
+    private router: Router
+  ) {
     this.routes = [
       { label : "Lista de Fotos", link : "/photos" },
       { label : "Pesquisar Fotos", link : "/photos-search" },
@@ -18,6 +23,11 @@ export class InsideHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.authService.clearStorate()
+    this.router.navigate(['/login'])
   }
 
 }
