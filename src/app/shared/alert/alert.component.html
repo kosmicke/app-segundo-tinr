@@ -1,0 +1,19 @@
+<!-- No arquivo "alert.component.html" -->
+<div class="the-alert-wapper" [ngClass]="{'the-alert-wapper--hidden' : !status}" >
+  <div class="the-alert">
+    <div class="the-alert-header">
+      {{header}}
+    </div>
+    <div class="the-alert-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="the-alert-footer">
+      <button class="btn btn-danger btn-sm" (click)="cancelClicked()">
+        Cancelar
+      </button>
+      <button class="btn btn-primary btn-sm" (click)="confirmClicked()">
+        Confirmar
+      </button>
+    </div>
+  </div>
+</div>

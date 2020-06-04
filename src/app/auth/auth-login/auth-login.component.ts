@@ -1,11 +1,12 @@
 // No arquivo "auth-login.component.ts"
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 // Importe as ferramentas do ReactiveFormsModule
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { AlertComponent } from 'src/app/shared/alert/alert.component';
 
 @Component({
   selector: 'app-auth-login',
@@ -20,6 +21,9 @@ export class AuthLoginComponent implements OnInit {
   // Crie uma variável para armazenar os dados
   public data : any = {}
 
+  @ViewChild("errorAlert", { static : false })
+  public errorAlert : AlertComponent;
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -33,7 +37,8 @@ export class AuthLoginComponent implements OnInit {
 
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   // Função que será chamada pela diretiva (click) no HTML
   async sendLogin(){
@@ -54,7 +59,8 @@ export class AuthLoginComponent implements OnInit {
 
       } catch (error) {
         console.log(error)
-        alert("Não foi possível efeturar login. Verifique os dados e tente novamente.")
+        // alert("Não foi possível efeturar login. Verifique os dados e tente novamente.")
+        this.errorAlert.setStatus(true)
       }
 
     }
@@ -90,6 +96,16 @@ export class AuthLoginComponent implements OnInit {
     // Caso campo é inválido mas erro não foi capturado acima
     return "Campo inválido."
 
+  }
+
+  onAlertInteract(confirmed){
+    this.errorAlert.setStatus(false)
+    if(confirmed){
+      console.log("confirmado")
+    }
+    else{
+      console.log("negado")
+    }
   }
 
 }

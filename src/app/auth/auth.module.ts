@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [AuthLoginComponent],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers : [
     AuthService

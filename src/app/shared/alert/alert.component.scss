@@ -1,0 +1,49 @@
+// No arquivo "alert.component.scss"
+.the-alert-wapper{
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.the-alert{
+  margin: 40px;
+  height: auto;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 500px;
+  max-width: 90vw;
+}
+
+.the-alert-header{
+  padding: 16px;
+  border-bottom: 1px solid #F1F1F1
+}
+
+.the-alert-body{
+  padding: 16px;
+}
+
+.the-alert-footer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  border-top: 1px solid #F1F1F1;
+  padding: 16px;
+  button:not(:last-child){
+    margin: 0px 8px;
+  }
+}
+
+.the-alert-wapper--hidden{
+  display: none;
+}

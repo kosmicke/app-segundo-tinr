@@ -24,3 +24,8 @@
 
   </form>
 </div>
+
+
+<app-alert header="Atenção!" #errorAlert (onInteract)="onAlertInteract($event)">
+  <p>Esta é uma mensagem de alerta!</p>
+</app-alert>
